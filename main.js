@@ -1,3 +1,6 @@
+var x=""
+var y=""
+
 function setup() {
     canvas = createCanvas(300, 300);
     canvas.center();
@@ -8,7 +11,9 @@ function setup() {
     poseNet.on('pose', gotPoses);
     }
 
-function preload(){}
+function preload(){
+    moustache = loadImage('m.png')
+}
 
 function draw(){
     image(video,0,0,300,300)
@@ -28,4 +33,4 @@ function modelLoaded() {
     console.log("nose x = " + results[0].pose.nose.x);
     console.log("nose y = " + results[0].pose.nose.y);
     }
-    }
+}
